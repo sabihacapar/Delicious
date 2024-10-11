@@ -1,11 +1,10 @@
 Options -indexes
 RewriteEngine On
 RewriteBase /delicious/
-RewriteRule ^institutional/(.*)$ index.php?page=institutional&seflink=$1 [NC]
-RewriteRule ^services$ index.php?page=services [NC]
-RewriteRule ^projects$ index.php?page=projects [NC]
-RewriteRule ^blogs$ index.php?page=blogs [NC]
+RewriteRule ^news$ index.php?page=news [NC]
+RewriteRule ^about$ index.php?page=about [NC]
+RewriteRule ^dishMonth$ index.php?page=dishMonth [NC]
+RewriteRule ^products$ index.php?page=products [NC]
+RewriteRule ^products-detail/(.*)$ index.php?page=products-detail&seflink=$1 [NC]
+RewriteRule ^news-detail/(.*)$ index.php?page=news-detail&seflink=$1 [NC]
 RewriteRule ^contact$ index.php?page=contact [NC]
-RewriteRule ^services-detail/(.*)$ index.php?page=services-detail&seflink=$1 [NC]
-RewriteRule ^projects-detail/(.*)$ index.php?page=projects-detail&seflink=$1 [NC]
-RewriteRule ^blogs-detail/(.*)$ index.php?page=blogs-detail&seflink=$1 [NC]

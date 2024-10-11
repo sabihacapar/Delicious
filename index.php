@@ -29,21 +29,21 @@ define("SITE", $websiteurl);
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/all.min.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/all.min.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="<?=SITE?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/bootstrap/css/bootstrap.min.css">
     <!-- owl carousel -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/owl.carousel.css">
     <!-- magnific popup -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/magnific-popup.css">
     <!-- animate css -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/animate.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/animate.css">
     <!-- mean menu css -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/meanmenu.min.css">
     <!-- main style -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/main.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/main.css">
     <!-- responsive -->
-    <link rel="stylesheet" href="<?=SITE?>assets/css/responsive.css">
+    <link rel="stylesheet" href="<?= SITE ?>assets/css/responsive.css">
 
 </head>
 
@@ -59,79 +59,30 @@ define("SITE", $websiteurl);
 
     <!-- header -->
     <?php
-	include_once(DATA . "header.php");
-	?>
-    <!-- end header -->
-
-    <!-- search area -->
-    <div class="search-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <span class="close-btn"><i class="fas fa-window-close"></i></span>
-                    <div class="search-bar">
-                        <div class="search-bar-tablecell">
-                            <h3>Search For:</h3>
-                            <input type="text" placeholder="Keywords">
-                            <button type="submit">Search <i class="fas fa-search"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end search area -->
-
-    <!-- hero area -->
+    include_once(DATA . "header.php");
+    ?>
     <?php
-	include_once(SAYFA . "banner.php");
-	?>
-    <!-- end hero area -->
+    if ($_GET && !empty($_GET["page"])) {
+        //!gelen değeri sayfaya ata
+        $page = $_GET["page"] . ".php";
 
-    <!-- features list section -->
+        if (file_exists(SAYFA . $page)) { //dosya kontrolü
+            include_once(SAYFA . $page);
+        } else { //eğer öyle bir sayfa yoksa
+            include_once(SAYFA . "content.php"); //ana sayfaya yönlendir
+        }
+    } else {
+        include_once(SAYFA . "content.php");
+        //content(içerik) alanını sayfaya dahil etmek için kullanıldı.
 
-    <!-- end features list section -->
 
-    <!-- product section -->
-    <?php
-	require_once(SAYFA . "products.php");
-	?>
-    <!-- end product section -->
-
-    <!-- cart banner section -->
-    <?php
-	require_once(SAYFA . "dishMonth.php");
-	?>
-    <!-- end cart banner section -->
-
-    <!-- testimonail-section -->
-    <?php
-	require_once(SAYFA . "comments.php");
-	?>
-    <!-- end testimonail-section -->
-
-    <!-- advertisement section -->
-    <?php
-	require_once(SAYFA . "about.php");
-	?>
-    <!-- end advertisement section -->
-
-    <!-- latest news -->
-    <?php
-	include_once(SAYFA . "news.php");
-	?>
-    <!-- end latest news -->
-
-    <!-- logo carousel -->
-    <?php
-	include_once(SAYFA . "referances.php");
-	?>
-    <!-- end logo carousel -->
+    }
+    ?>
 
     <!-- footer -->
     <?php
-	include_once(DATA . "footer.php");
-	?>
+    include_once(DATA . "footer.php");
+    ?>
     <!-- end footer -->
 
     <!-- copyright -->
@@ -161,25 +112,25 @@ define("SITE", $websiteurl);
     <!-- end copyright -->
 
     <!-- jquery -->
-    <script src="<?=SITE?>assets/js/jquery-1.11.3.min.js"></script>
+    <script src="<?= SITE ?>assets/js/jquery-1.11.3.min.js"></script>
     <!-- bootstrap -->
-    <script src="<?=SITE?>assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?= SITE ?>assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- count down -->
-    <script src="<?=SITE?>assets/js/jquery.countdown.js"></script>
+    <script src="<?= SITE ?>assets/js/jquery.countdown.js"></script>
     <!-- isotope -->
-    <script src="<?=SITE?>assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <script src="<?= SITE ?>assets/js/jquery.isotope-3.0.6.min.js"></script>
     <!-- waypoints -->
-    <script src="<?=SITE?>assets/js/waypoints.js"></script>
+    <script src="<?= SITE ?>assets/js/waypoints.js"></script>
     <!-- owl carousel -->
-    <script src="<?=SITE?>assets/js/owl.carousel.min.js"></script>
+    <script src="<?= SITE ?>assets/js/owl.carousel.min.js"></script>
     <!-- magnific popup -->
-    <script src="<?=SITE?>assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="<?= SITE ?>assets/js/jquery.magnific-popup.min.js"></script>
     <!-- mean menu -->
-    <script src="<?=SITE?>assets/js/jquery.meanmenu.min.js"></script>
+    <script src="<?= SITE ?>assets/js/jquery.meanmenu.min.js"></script>
     <!-- sticker js -->
-    <script src="<?=SITE?>assets/js/sticker.js"></script>
+    <script src="<?= SITE ?>assets/js/sticker.js"></script>
     <!-- main js -->
-    <script src="<?=SITE?>assets/js/main.js"></script>
+    <script src="<?= SITE ?>assets/js/main.js"></script>
 
 </body>
 

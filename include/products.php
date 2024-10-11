@@ -11,20 +11,20 @@
 
         <div class="row">
             <?php
-            $products = $DB->getAll("products", " WHERE state=?", array(1), "ORDER BY orderno ASC");
+            $products = $DB->getAll("products", " WHERE state=?", array(1), "ORDER BY orderno ASC", 3);
             if ($products) {
                 for ($i = 0; $i < count($products); $i++) {
             ?>
-            <div class="col-lg-4 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+                            </div>
+                            <h3><?= stripslashes($products[$i]["title"]) ?></h3>
+                            <p class="product-price"><?= $products[$i]["title"] ?> </p>
+                            <a href="cart.html" class="cart-btn">Tarif Detayı İçin</a>
+                        </div>
                     </div>
-                    <h3><?= stripslashes($products[$i]["title"]) ?></h3>
-                    <p class="product-price"><?= $products[$i]["title"] ?> </p>
-                    <a href="cart.html" class="cart-btn">Tarif Detayı İçin</a>
-                </div>
-            </div>
             <?php
                 }
             }

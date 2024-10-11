@@ -12,7 +12,7 @@
 
         <div class="row">
             <?php
-            $news = $DB->getAll("news", " WHERE state=?", array(1), "ORDER BY orderno ASC");
+            $news = $DB->getAll("news", " WHERE state=?", array(1), "ORDER BY orderno ASC", 3);
             if ($news) {
                 for ($i = 0; $i < count($news); $i++) {
             ?>
