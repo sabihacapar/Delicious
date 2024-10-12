@@ -51,12 +51,12 @@ if ($_GET && !empty($_GET["page"])) {
 
                         if ($banner) {
                         ?>
-                            <p class="subtitle"><?= stripslashes($banner[0]["title"]) ?></p>
-                            <h1><?= $banner[0]["texts"] ?></h1>
-                            <div class="hero-btns">
-                                <a href="shop.html" class="boxed-btn">Fruit Collection</a>
-                                <a href="contact.html" class="bordered-btn">Contact Us</a>
-                            </div>
+                        <p class="subtitle"><?= stripslashes($banner[0]["title"]) ?></p>
+                        <h1><?= $banner[0]["texts"] ?></h1>
+                        <div class="hero-btns">
+                            <a href="<?=SITE ?>products" class="boxed-btn">Yemekler</a>
+                            <a href="<?=SITE ?>contact" class="bordered-btn">İletişim</a>
+                        </div>
                         <?php
                         }
                         ?>
@@ -91,16 +91,16 @@ if ($_GET && !empty($_GET["page"])) {
             if ($products) {
                 for ($i = 0; $i < count($products); $i++) {
             ?>
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image">
-                                <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-                            </div>
-                            <h3><?= stripslashes($products[$i]["title"]) ?></h3>
-                            <p class="product-price"><?= $products[$i]["title"] ?> </p>
-                            <a href="cart.html" class="cart-btn">Tarif Detayı İçin</a>
-                        </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="single-product-item">
+                    <div class="product-image">
+                        <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
                     </div>
+                    <h3><?= stripslashes($products[$i]["title"]) ?></h3>
+                    <p class="product-price"><?= $products[$i]["title"] ?> </p>
+                    <a href="cart.html" class="cart-btn">Tarif Detayı İçin</a>
+                </div>
+            </div>
             <?php
                 }
             }
@@ -177,22 +177,22 @@ if ($_GET && !empty($_GET["page"])) {
                     if ($comments) {
                         for ($i = 0; $i < count($comments); $i++) {
                     ?>
-                            <div class="single-testimonial-slider">
-                                <div class="client-avater">
-                                    <img src="assets/img/avaters/avatar1.png" alt="">
-                                </div>
-                                <div class="client-meta">
-                                    <h3><?= stripslashes($comments[$i]["title"]) ?>
-                                        <span><?= stripslashes($comments[$i]["description"]) ?></span>
-                                    </h3>
-                                    <p class="testimonial-body">
-                                        <?= $comments[$i]["texts"] ?>
-                                    </p>
-                                    <div class="last-icon">
-                                        <i class="fas fa-quote-right"></i>
-                                    </div>
-                                </div>
+                    <div class="single-testimonial-slider">
+                        <div class="client-avater">
+                            <img src="assets/img/avaters/avatar1.png" alt="">
+                        </div>
+                        <div class="client-meta">
+                            <h3><?= stripslashes($comments[$i]["title"]) ?>
+                                <span><?= stripslashes($comments[$i]["description"]) ?></span>
+                            </h3>
+                            <p class="testimonial-body">
+                                <?= $comments[$i]["texts"] ?>
+                            </p>
+                            <div class="last-icon">
+                                <i class="fas fa-quote-right"></i>
                             </div>
+                        </div>
+                    </div>
                     <?php
                         }
                     }
@@ -252,25 +252,25 @@ if ($_GET && !empty($_GET["page"])) {
             if ($news) {
                 for ($i = 0; $i < count($news); $i++) {
             ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-latest-news">
-                            <a href="single-news.html">
-                                <div class="latest-news-bg news-bg-1"></div>
-                            </a>
-                            <div class="news-text-box">
-                                <h3><a href="single-news.html"><?= stripslashes($news[$i]["title"]) ?></a></h3>
-                                <p class="blog-meta">
-                                    <span class="author"><i class="fas fa-user"></i>
-                                        <?= stripslashes($news[$i]["description"]) ?></span>
-                                    <span class="date"><i class="fas fa-calendar"></i>
-                                        <?= stripslashes($news[$i]["date"]) ?></span>
-                                </p>
-                                <p class="excerpt"><?= stripslashes($news[$i]["texts"]) ?></p>
-                                <a href="single-news.html" class="read-more-btn">Daha fazlası <i
-                                        class="fas fa-angle-right"></i></a>
-                            </div>
-                        </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-latest-news">
+                    <a href="single-news.html">
+                        <div class="latest-news-bg news-bg-1"></div>
+                    </a>
+                    <div class="news-text-box">
+                        <h3><a href="single-news.html"><?= stripslashes($news[$i]["title"]) ?></a></h3>
+                        <p class="blog-meta">
+                            <span class="author"><i class="fas fa-user"></i>
+                                <?= stripslashes($news[$i]["description"]) ?></span>
+                            <span class="date"><i class="fas fa-calendar"></i>
+                                <?= stripslashes($news[$i]["date"]) ?></span>
+                        </p>
+                        <p class="excerpt"><?= stripslashes($news[$i]["texts"]) ?></p>
+                        <a href="single-news.html" class="read-more-btn">Daha fazlası <i
+                                class="fas fa-angle-right"></i></a>
                     </div>
+                </div>
+            </div>
             <?php
                 }
             }

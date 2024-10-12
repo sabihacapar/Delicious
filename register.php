@@ -52,7 +52,7 @@ define("SITE", $websiteurl);
 <body>
     <div class="register-box">
         <div class="register-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="../../index2.html"><b>İNCE</b>LTE</a>
         </div>
 
         <div class="card">
