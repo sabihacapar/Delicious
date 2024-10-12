@@ -5,7 +5,7 @@
                 <div class="main-menu-wrap">
                     <!-- logo -->
                     <div class="site-logo">
-                        <a href="index.html">
+                        <a href="<?= SITE ?>">
                             <img src="assets/img/logo.png" alt="">
                         </a>
                     </div>
@@ -25,7 +25,7 @@
                             <li><a href="<?= SITE ?>contact">İletişim</a></li>
                             <li>
                                 <div class="header-icons">
-                                    <a class="shopping-cart" href="cart.html"><i class="fas fa-user"></i></a>
+                                    <a class="shopping-cart" href="<?= SITE ?>login"><i class="fas fa-user"></i></a>
                                     <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                                 </div>
                             </li>
